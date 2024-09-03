@@ -264,7 +264,7 @@ li{
 }
 
 .distribucion{
-    height: 40.8rem;
+    height: 37rem;
     padding: 0rem 10rem;
     opacity: 0; /* Elemento inicialmente invisible */
     transform: scale(0.5); /* Inicialmente más pequeño */
@@ -293,7 +293,7 @@ li{
 .pieImagen{
     height: 8rem;
     position: relative;
-    bottom: 8.3rem;
+    bottom: 10rem;
     width: 100%;
 }
 
