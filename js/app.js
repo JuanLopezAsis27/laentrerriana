@@ -169,19 +169,6 @@ window.addEventListener('scroll', checkPosition);
 
 });
 
-// window.addEventListener('scroll', function() {
-//   const growDiv = document.querySelector('.distribucion');
-//   const scrollPosition = window.scrollY;
-
-//   if (scrollPosition > 100) {
-//       growDiv.style.transform = 'translate(0%, 0%) scale(1)';
-//       growDiv.style.opacity = '1';
-//    }
-//    //else {
-//   //     growDiv.style.transform = 'translate(0%, 0%) scale(0)';
-//   //     growDiv.style.opacity = '0';
-//   // }
-// });
 
 document.addEventListener('DOMContentLoaded', function() {
   const distribucion = document.querySelector('.distribucion');
@@ -196,7 +183,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   checkPosition();
-
   window.addEventListener('scroll', checkPosition);
 });
 

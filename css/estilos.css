@@ -270,7 +270,6 @@ li{
     transform: scale(0.5); /* Inicialmente más pequeño */
     transition: opacity 1s ease-out, transform 1s ease-out; /* Transiciones para opacidad y escala */
     transition-delay: 0.1s;
-    overflow: hidden;
 }
 
 .distribucion.show{
