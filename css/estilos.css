@@ -610,10 +610,26 @@ footer h1{
 }
 
 .redes{
-    padding: 1rem 7.5rem;
+    background-color: #404040cd;
+}
+
+.redes h1{
+    padding: 2rem;
+    text-align: center;
+}
+
+.redesFeeds{
+    padding: 0 7.5rem 6rem 7.5rem ;
     display: flex;
     justify-content: center;
+    gap: 8rem;
 }
+
+.redesFeeds .instagram iframe{
+    max-height: 470px;
+    min-width: 340px;
+}
+
 
 @media (max-width: 1344px){
     .slogan h1{
