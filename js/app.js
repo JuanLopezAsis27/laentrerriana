@@ -91,54 +91,166 @@ showSlide(currentIndex);
 
 
 document.addEventListener('DOMContentLoaded', function() {
+
   const pilares = document.querySelector('.pilares');
+  
+  function checkPosition() {
+    const pilaresPosition = pilares.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
 
-  window.addEventListener('scroll', function() {
-      const pilaresPosition = pilares.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
+    if (pilaresPosition < windowHeight) {
+        pilares.classList.add('show');
+    }
+}
 
-      if (pilaresPosition < windowHeight) {
-          pilares.classList.add('show');
-      }
-  });
+checkPosition();
+
+
+window.addEventListener('scroll', checkPosition);
+
 });
 
 document.addEventListener('DOMContentLoaded', function() {
   const slogan = document.querySelector('.slogan h1');
-  console.log(slogan);
-  
-  window.addEventListener('scroll', function() {
-      const sloganPosition = slogan.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
 
-      if (sloganPosition < windowHeight) {
-          slogan.classList.add('show');
-      }
-  });
+  function checkPosition() {
+    const sloganPosition = slogan.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (sloganPosition < windowHeight) {
+      slogan.classList.add('show');
+    }
+}
+
+checkPosition();
+
+
+window.addEventListener('scroll', checkPosition);
+
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-  const ubicaciones = document.querySelector('.ubicaciones') 
+  const ubicaciones = document.querySelector('.ubicaciones');
 
-  window.addEventListener('scroll', function() {
-      const ubicacionesPosition = ubicaciones.getBoundingClientRect().top; 
-      const windowHeight = window.innerHeight;
+  function checkPosition() {
+    const ubicacionesPosition = ubicaciones.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
 
-      if (ubicacionesPosition < windowHeight) {
-          ubicaciones.classList.add('show')
-      }
-  });
+    if (ubicacionesPosition < windowHeight) {
+      ubicaciones.classList.add('show');
+    }
+}
+
+checkPosition();
+
+
+window.addEventListener('scroll', checkPosition);
+
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-  const sucursales = document.querySelector('.sucursalesTitulo h1') 
 
-  window.addEventListener('scroll', function() {
-      const sucursalesPosition = sucursales.getBoundingClientRect().top; 
+  const sucursales = document.querySelector('.sucursalesTitulo h1');
+
+  function checkPosition() {
+    const sucursalesPosition = sucursales.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (sucursalesPosition < windowHeight) {
+      sucursales.classList.add('show');
+    }
+}
+
+checkPosition();
+
+
+window.addEventListener('scroll', checkPosition);
+
+
+});
+
+// window.addEventListener('scroll', function() {
+//   const growDiv = document.querySelector('.distribucion');
+//   const scrollPosition = window.scrollY;
+
+//   if (scrollPosition > 100) {
+//       growDiv.style.transform = 'translate(0%, 0%) scale(1)';
+//       growDiv.style.opacity = '1';
+//    }
+//    //else {
+//   //     growDiv.style.transform = 'translate(0%, 0%) scale(0)';
+//   //     growDiv.style.opacity = '0';
+//   // }
+// });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const distribucion = document.querySelector('.distribucion');
+
+  function checkPosition() {
+      const distribucionPosition = distribucion.getBoundingClientRect().top;
       const windowHeight = window.innerHeight;
 
-      if (sucursalesPosition < windowHeight) {
-          sucursales.classList.add('show')
+      if (distribucionPosition < windowHeight) {
+        distribucion.classList.add('show');
       }
-  });
+  }
+
+  checkPosition();
+
+  window.addEventListener('scroll', checkPosition);
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const mapa = document.querySelector('.mapa iframe');
+
+  function checkPosition() {
+      const mapaPosition = mapa.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (mapaPosition < windowHeight) {
+        mapa.classList.add('show');
+      }
+  }
+
+  checkPosition();
+
+  window.addEventListener('scroll', checkPosition);
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const ubicacionh1 = document.querySelector('.ubicacion h1');
+
+  function checkPosition() {
+      const ubicacionh1Position = ubicacionh1.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (ubicacionh1Position < windowHeight) {
+        ubicacionh1.classList.add('show');
+      }
+  }
+
+  checkPosition();
+
+  window.addEventListener('scroll', checkPosition);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const horario = document.querySelector('.horario');
+
+  function checkPosition() {
+      const horarioPosition = horario.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (horarioPosition < windowHeight) {
+        horario.classList.add('show');
+      }
+  }
+
+  checkPosition();
+
+  window.addEventListener('scroll', checkPosition);
+});
+
+
