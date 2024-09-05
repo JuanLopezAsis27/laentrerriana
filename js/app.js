@@ -1,4 +1,4 @@
-let overlay = document.querySelector(".overlay")
+let overlay = document.querySelector(".overlay");
 let closeMenu = document.querySelector(".closeMenu");
 let menu = document.querySelector(".iconoMenu");
 let sidebar = document.querySelector(".sidebar");
@@ -7,236 +7,215 @@ console.log(link);
 
 menu.onclick = function () {
   sidebar.classList.add("active");
-  overlay.classList.add("active")
+  overlay.classList.add("active");
 };
 
 closeMenu.onclick = function () {
   sidebar.classList.remove("active");
-  overlay.classList.remove("active")
+  overlay.classList.remove("active");
 };
 
 let currentIndex = 0;
-const slideInterval = 5000; // Tiempo en milisegundos (5000ms = 5s)
-let intervalId; // Variable para almacenar el ID del intervalo
-let isTransitioning = false; // Variable para controlar el estado de la transición
+const slideInterval = 5000;
+let intervalId;
+let isTransitioning = false;
 
-const nextButton = document.getElementById('nextBtn');
-const prevButton = document.getElementById('prevBtn');
+const nextButton = document.getElementById("nextBtn");
+const prevButton = document.getElementById("prevBtn");
 
-// Función para mostrar el slide actual
 function showSlide(index) {
-    const slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length;
+  const slides = document.querySelectorAll(".slide");
+  const totalSlides = slides.length;
 
-    if (index >= totalSlides) {
-        currentIndex = 0;
-    } else if (index < 0) {
-        currentIndex = totalSlides - 1;
-    } else {
-        currentIndex = index;
-    }
+  if (index >= totalSlides) {
+    currentIndex = 0;
+  } else if (index < 0) {
+    currentIndex = totalSlides - 1;
+  } else {
+    currentIndex = index;
+  }
 
-    // Mover las slides usando transform
-    const slider = document.querySelector('.slides');
-    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+  const slider = document.querySelector(".slides");
+  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-    // Remover la clase 'active' de todos los slides
-    slides.forEach(slide => slide.classList.remove('active'));
-    
-    // Añadir la clase 'active' al slide actual
-    slides[currentIndex].classList.add('active');
+  slides.forEach((slide) => slide.classList.remove("active"));
+
+  slides[currentIndex].classList.add("active");
 }
 
-// Función para mostrar el siguiente slide
 function nextSlide() {
   if (!isTransitioning) {
     isTransitioning = true;
     showSlide(currentIndex + 1);
-    resetInterval(); // Reiniciar el intervalo después de cambiar el slide
-}
+    resetInterval();
+  }
 }
 
-// Función para mostrar el slide anterior
 function prevSlide() {
   if (!isTransitioning) {
     isTransitioning = true;
     showSlide(currentIndex - 1);
-    resetInterval(); // Reiniciar el intervalo después de cambiar el slide
-}
+    resetInterval();
+  }
 }
 
 function startInterval() {
   intervalId = setInterval(nextSlide, slideInterval);
 }
 
-// Función para reiniciar el intervalo de cambio de slide
 function resetInterval() {
-  clearInterval(intervalId); // Limpiar el intervalo actual
-  startInterval(); // Iniciar un nuevo intervalo
+  clearInterval(intervalId);
+  startInterval();
 }
 
-// Función para habilitar los botones después de la transición
 function enableButtons() {
-  isTransitioning = false; // Permitir nuevas transiciones
+  isTransitioning = false;
 }
 
-// Agregar evento para habilitar los botones cuando termine la transición
-document.querySelector('.slides').addEventListener('transitionend', enableButtons);
+document
+  .querySelector(".slides")
+  .addEventListener("transitionend", enableButtons);
 
-// Iniciar el intervalo por primera vez
 startInterval();
 
-// Mostrar el primer slide al cargar la página
 showSlide(currentIndex);
 
+document.addEventListener("DOMContentLoaded", function () {
+  const pilares = document.querySelectorAll(".pilares div");
 
-document.addEventListener('DOMContentLoaded', function() {
-
-  const pilares = document.querySelector('.pilares');
-  
   function checkPosition() {
-    const pilaresPosition = pilares.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
+    pilares.forEach((pilar) => {
+      const pilarPosition = pilar.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
 
-    if (pilaresPosition < windowHeight) {
-        pilares.classList.add('show');
-    }
-}
+      if (pilarPosition < windowHeight) {
+        pilar.classList.add("show");
+      }
+    });
+  }
 
-checkPosition();
+  checkPosition();
 
-
-window.addEventListener('scroll', checkPosition);
-
+  window.addEventListener("scroll", checkPosition);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  const slogan = document.querySelector('.slogan h1');
+document.addEventListener("DOMContentLoaded", function () {
+  const slogan = document.querySelector(".slogan h1");
 
   function checkPosition() {
     const sloganPosition = slogan.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
 
     if (sloganPosition < windowHeight) {
-      slogan.classList.add('show');
+      slogan.classList.add("show");
     }
-}
+  }
 
-checkPosition();
+  checkPosition();
 
-
-window.addEventListener('scroll', checkPosition);
-
+  window.addEventListener("scroll", checkPosition);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  const ubicaciones = document.querySelector('.ubicaciones');
+document.addEventListener("DOMContentLoaded", function () {
+  const ubicaciones = document.querySelectorAll(".ubicaciones div");
+  console.log(ubicaciones);
 
   function checkPosition() {
-    const ubicacionesPosition = ubicaciones.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
+    ubicaciones.forEach((ubicacion) => {
+      const ubicacionPosition = ubicacion.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
 
-    if (ubicacionesPosition < windowHeight) {
-      ubicaciones.classList.add('show');
-    }
-}
+      if (ubicacionPosition < windowHeight) {
+        ubicacion.classList.add("show");
+      }
+    });
+  }
 
-checkPosition();
+  checkPosition();
 
-
-window.addEventListener('scroll', checkPosition);
-
+  window.addEventListener("scroll", checkPosition);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-
-  const sucursales = document.querySelector('.sucursalesTitulo h1');
+document.addEventListener("DOMContentLoaded", function () {
+  const sucursales = document.querySelector(".sucursalesTitulo h1");
 
   function checkPosition() {
     const sucursalesPosition = sucursales.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
 
     if (sucursalesPosition < windowHeight) {
-      sucursales.classList.add('show');
+      sucursales.classList.add("show");
     }
-}
-
-checkPosition();
-
-
-window.addEventListener('scroll', checkPosition);
-
-
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  const distribucion = document.querySelector('.distribucion');
-
-  function checkPosition() {
-      const distribucionPosition = distribucion.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-
-      if (distribucionPosition < windowHeight) {
-        distribucion.classList.add('show');
-      }
-  }
-
-  checkPosition();
-  window.addEventListener('scroll', checkPosition);
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  const mapa = document.querySelector('.mapa iframe');
-
-  function checkPosition() {
-      const mapaPosition = mapa.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-
-      if (mapaPosition < windowHeight) {
-        mapa.classList.add('show');
-      }
   }
 
   checkPosition();
 
-  window.addEventListener('scroll', checkPosition);
+  window.addEventListener("scroll", checkPosition);
 });
 
-
-document.addEventListener('DOMContentLoaded', function() {
-  const ubicacionh1 = document.querySelector('.ubicacion h1');
+document.addEventListener("DOMContentLoaded", function () {
+  const distribucion = document.querySelector(".distribucion");
 
   function checkPosition() {
-      const ubicacionh1Position = ubicacionh1.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
+    const distribucionPosition = distribucion.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
 
-      if (ubicacionh1Position < windowHeight) {
-        ubicacionh1.classList.add('show');
-      }
+    if (distribucionPosition < windowHeight) {
+      distribucion.classList.add("show");
+    }
+  }
+
+  checkPosition();
+  window.addEventListener("scroll", checkPosition);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const mapa = document.querySelector(".mapa iframe");
+
+  function checkPosition() {
+    const mapaPosition = mapa.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (mapaPosition < windowHeight) {
+      mapa.classList.add("show");
+    }
   }
 
   checkPosition();
 
-  window.addEventListener('scroll', checkPosition);
+  window.addEventListener("scroll", checkPosition);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  const horario = document.querySelector('.horario');
+document.addEventListener("DOMContentLoaded", function () {
+  const ubicacionh1 = document.querySelector(".ubicacion h1");
 
   function checkPosition() {
-      const horarioPosition = horario.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
+    const ubicacionh1Position = ubicacionh1.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
 
-      if (horarioPosition < windowHeight) {
-        horario.classList.add('show');
-      }
+    if (ubicacionh1Position < windowHeight) {
+      ubicacionh1.classList.add("show");
+    }
   }
 
   checkPosition();
 
-  window.addEventListener('scroll', checkPosition);
+  window.addEventListener("scroll", checkPosition);
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const horario = document.querySelector(".horario");
 
+  function checkPosition() {
+    const horarioPosition = horario.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (horarioPosition < windowHeight) {
+      horario.classList.add("show");
+    }
+  }
+
+  checkPosition();
+
+  window.addEventListener("scroll", checkPosition);
+});
