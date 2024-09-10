@@ -75,6 +75,7 @@ nav li{
 body {
     background-image: url('/imagenes/background.png');
     background-size: 100%;
+    background-position-y: bottom;
     background-attachment: fixed;
 }
 
