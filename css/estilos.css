@@ -211,15 +211,15 @@ li{
 .slogan h1{
     font-family: manteman;
     font-size: 7rem;
-    opacity: 0; /* Elemento inicialmente invisible */
-    transform: translateY(-50px); /* Desplazado hacia arriba */
-    transition: opacity 0.5s ease-out, transform 1s ease-out; /* Transiciones para opacidad y desplazamiento */
+    opacity: 0; 
+    transform: translateY(-50px); 
+    transition: opacity 0.5s ease-out, transform 1s ease-out; 
     transition-delay: 0.1s;
 }
 
 .slogan h1.show{
-    opacity: 1; /* Elemento visible al agregar la clase 'show' */
-    transform: translateY(0); /* Restablecer posición al agregar la clase 'show' */
+    opacity: 1; 
+    transform: translateY(0); 
 }
 
 .pilares{
@@ -311,6 +311,7 @@ li{
     gap: 4rem;
     align-items: end;
     margin-bottom: 6rem ;
+    
 }
 
 .mapa iframe{
@@ -318,6 +319,7 @@ li{
     opacity: 0;
     transition: transform 0.8s ease-out, opacity 0.8s ease-out;
     transition-delay: 0.1s;
+    
 }
 
 .mapa iframe.show{
@@ -333,9 +335,10 @@ li{
 .mapa article{
     display: flex;
     flex-direction: column;
-    height: 28rem;
+    min-height: 34rem;
     justify-content: space-around;
 }
+
 
 .mapa h1{
   font-size: 3.5rem;
@@ -626,10 +629,14 @@ footer h1{
     min-width: 340px;
 }
 
+.facebook{
+    min-width: 340px;
+}
+
 
 @media (max-width: 1344px){
     .slogan h1{
-        font-size: 6rem;
+        font-size: 4.8rem;
     }
     
     .pilares div{
@@ -637,13 +644,40 @@ footer h1{
         
     }
 
+    .distribucion{
+        padding: 0rem 5rem;
+    }
+
+    .mapa{
+        padding: 1rem 5rem;
+        margin-top: 15rem;
+        display: flex;
+        gap: 4rem;
+        align-items: end;
+        margin-bottom: 6rem ;
+    }
+
 }
 
 @media (max-width: 1024px){
 
-    header{
-        padding: 0.5rem 6rem;
+    .quienesSomos{
+        margin-bottom:7.3rem ;
     }
+
+    header{
+        padding: 0.5rem 7rem;
+    }
+
+    .slogan{
+        padding: 4rem 7rem;
+        margin: 0;
+    }
+
+    .slogan h1{
+        font-size: 4.5rem;
+    }
+
 
     .slider{
         position: relative;
@@ -679,11 +713,37 @@ footer h1{
     }
 
     .quienesSomosTexto{
-        padding: 1rem 10rem;
+        padding: 1rem 9rem;
+    }
+
+    .distribucion{
+        height: 28rem;
+        padding: 0rem 7rem;
+        opacity: 0;
+        transform: scale(0.5); 
+        transition: opacity 1s ease-out, transform 1s ease-out; 
+        transition-delay: 0.1s;
+    }
+
+    .distribucion h1{
+        text-align: end;
+        position: relative;
+        bottom: 17rem;
+        right: 2rem;
+        font-size: 5rem;
+    }
+
+    .pieImagen{
+        height: 6rem;   
+        bottom: 7rem;
+    }
+    
+    .pieImagen2{
+        height: 6rem;
+        bottom: 9rem;
     }
 
     .ubicacion h1{
-        
         font-size: 4rem;
     }
 
@@ -691,11 +751,21 @@ footer h1{
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding: 1rem 7rem;
     }
 
     .mapa iframe{
         width: 100%;
     }
+
+    .sucursalesTitulo{
+        padding: 4rem 7rem;
+    }
+
+    .sucursales h1{
+        font-size: 6.5rem;
+    }
+    
 
     .ubicaciones{
         display: flex;
@@ -705,10 +775,41 @@ footer h1{
         flex-wrap: wrap;
     }
 
+    .redesFeeds{
+        gap: 4rem;
+    }
+    
+    .wp{
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        height: 3rem;
+        display: block;
+        width: 3rem;
+        background-color: #40404000;
+       
+    }
+
+    .contactenos{
+        display: none;
+    }
+    
+    .arrow{
+        display: none; 
+    }
+
+    .icon-wsp{
+        width: 100%;
+    }
+
 }
 
 
 @media (max-width: 768px){
+
+    .iconoMenu{
+        display: none;
+    }    
 
     header{
         padding: 0.5rem 3rem;
@@ -722,9 +823,16 @@ footer h1{
         padding: 1rem 4.5rem;
     }
 
+    .distribucion{
+        padding: 0rem 4.5rem;
+    }
+
+    .mapa{
+        padding: 1rem 4.5rem;
+    }
 
     .slogan h1{
-        font-size: 4rem;
+        font-size: 3.8rem;
     }
     
     .pilares div{
@@ -732,10 +840,20 @@ footer h1{
         
     }
 
+    .sucursalesTitulo{
+        padding: 4rem 4.5rem;
+    }
+
     .sucursales h1{
-        font-size: 4rem;
+        font-size: 7rem;
        
     }
+
+    .redes{
+        display: none;
+    }
+
+    
 
 }
 

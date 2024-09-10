@@ -16,68 +16,114 @@ closeMenu.onclick = function () {
 };
 
 let currentIndex = 0;
-const slideInterval = 5000;
-let intervalId;
-let isTransitioning = false;
+const slideInterval = 5000; // Tiempo en milisegundos (5000ms = 5s)
+let intervalId; // Variable para almacenar el ID del intervalo
+let isTransitioning = false; // Variable para controlar el estado de la transición
 
-const nextButton = document.getElementById("nextBtn");
-const prevButton = document.getElementById("prevBtn");
+// Variables para gestionar el deslizamiento táctil
+let startX = 0; 
+let isDragging = false; 
 
+const nextButton = document.getElementById('nextBtn');
+const prevButton = document.getElementById('prevBtn');
+
+// Función para mostrar el slide actual
 function showSlide(index) {
-  const slides = document.querySelectorAll(".slide");
-  const totalSlides = slides.length;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
 
-  if (index >= totalSlides) {
-    currentIndex = 0;
-  } else if (index < 0) {
-    currentIndex = totalSlides - 1;
-  } else {
-    currentIndex = index;
-  }
+    if (index >= totalSlides) {
+        currentIndex = 0;
+    } else if (index < 0) {
+        currentIndex = totalSlides - 1;
+    } else {
+        currentIndex = index;
+    }
 
-  const slider = document.querySelector(".slides");
-  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    // Mover las slides usando transform
+    const slider = document.querySelector('.slides');
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-  slides.forEach((slide) => slide.classList.remove("active"));
-
-  slides[currentIndex].classList.add("active");
+    // Remover la clase 'active' de todos los slides
+    slides.forEach(slide => slide.classList.remove('active'));
+    
+    // Añadir la clase 'active' al slide actual
+    slides[currentIndex].classList.add('active');
 }
 
+// Función para mostrar el siguiente slide
 function nextSlide() {
-  if (!isTransitioning) {
-    isTransitioning = true;
-    showSlide(currentIndex + 1);
-    resetInterval();
-  }
+    if (!isTransitioning) {
+        isTransitioning = true;
+        showSlide(currentIndex + 1);
+        resetInterval(); // Reiniciar el intervalo después de cambiar el slide
+    }
 }
 
+// Función para mostrar el slide anterior
 function prevSlide() {
-  if (!isTransitioning) {
-    isTransitioning = true;
-    showSlide(currentIndex - 1);
-    resetInterval();
-  }
+    if (!isTransitioning) {
+        isTransitioning = true;
+        showSlide(currentIndex - 1);
+        resetInterval(); // Reiniciar el intervalo después de cambiar el slide
+    }
 }
 
+// Función para iniciar el intervalo de cambio de slide
 function startInterval() {
-  intervalId = setInterval(nextSlide, slideInterval);
+    intervalId = setInterval(nextSlide, slideInterval);
 }
 
+// Función para reiniciar el intervalo de cambio de slide
 function resetInterval() {
-  clearInterval(intervalId);
-  startInterval();
+    clearInterval(intervalId); // Limpiar el intervalo actual
+    startInterval(); // Iniciar un nuevo intervalo
 }
 
+// Función para habilitar los botones después de la transición
 function enableButtons() {
-  isTransitioning = false;
+    isTransitioning = false; // Permitir nuevas transiciones
 }
 
-document
-  .querySelector(".slides")
-  .addEventListener("transitionend", enableButtons);
+// Agregar evento para habilitar los botones cuando termine la transición
+document.querySelector('.slides').addEventListener('transitionend', enableButtons);
 
+// Manejadores para eventos táctiles
+
+const slider = document.querySelector('.slider');
+
+slider.addEventListener('touchstart', (e) => {
+    // Obtener el punto de inicio del toque
+    startX = e.touches[0].clientX;
+    isDragging = true;
+});
+
+slider.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const currentX = e.touches[0].clientX;
+    const diffX = startX - currentX;
+
+    // Determinar si el usuario está deslizando horizontalmente
+    if (Math.abs(diffX) > 50) {
+        if (diffX > 0) {
+            // Deslizar hacia la izquierda (siguiente slide)
+            nextSlide();
+        } else {
+            // Deslizar hacia la derecha (slide anterior)
+            prevSlide();
+        }
+        isDragging = false; // Evitar que se dispare más de una vez por toque
+    }
+});
+
+slider.addEventListener('touchend', () => {
+    isDragging = false;
+});
+
+// Iniciar el intervalo por primera vez
 startInterval();
 
+// Mostrar el primer slide al cargar la página
 showSlide(currentIndex);
 
 document.addEventListener("DOMContentLoaded", function () {
