@@ -251,3 +251,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", checkPosition);
 });
+
+
+function cambiarImagenSegunResolucion() {
+  const img1 = document.querySelector('.slider1');
+  const img2 = document.querySelector('.slider2');
+  const img3 = document.querySelector('.slider3');
+
+  if (window.innerWidth <= 640) {
+      img1.src = '/imagenes/camion640.jpg';
+      img2.src = '/imagenes/local640.jpg'
+      img3.src = '/imagenes/productos640.jpg'
+  } else {
+      img1.src = '/imagenes/camion.jpg';
+      img2.src = '/imagenes/local.jpg';
+      img3.src = '/imagenes/productos.jpg'
+
+  }
+}
+
+// Llama la función cuando se cargue la página
+cambiarImagenSegunResolucion();
+
+// Llama la función si la ventana cambia de tamaño
+window.addEventListener('resize', cambiarImagenSegunResolucion);
