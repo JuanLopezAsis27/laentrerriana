@@ -1,8 +1,7 @@
-let overlay = document.querySelector(".overlay");
 let closeMenu = document.querySelector(".closeMenu");
 let menu = document.querySelector(".iconoMenu");
 let sidebar = document.querySelector(".sidebar");
-let link = document.querySelector(".link");
+let links = document.querySelectorAll(".link");
 
 
 menu.onclick = function () {
@@ -12,14 +11,14 @@ menu.onclick = function () {
 
 closeMenu.onclick = function () {
   sidebar.classList.remove("active");
-  overlay.classList.remove("active");
 };
 
-// link.addEventListener("onclick",(link)=>{
-//   sidebar.classList.remove("active");
-//   overlay.classList.remove("active");
-// })
-
+links.forEach((link)=>{
+  link.addEventListener("click",function(){
+    sidebar.classList.remove("active"); 
+  }
+)
+})
 
 let currentIndex = 0;
 const slideInterval = 5000; 

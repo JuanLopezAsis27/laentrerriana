@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: humane;
-    src: url(/fuentes/HumaneOpenType-PS/Humane-Bold.otf);
+    src: url(/fuentes/HumaneOpenType-PS/Humane-Bold.otf),url(/fuentes/HumaneOpenType-PS/Humane-Bold.ttf);
 }
 
 @font-face {
@@ -19,22 +19,6 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     scroll-margin-top: 6rem;
-}
-
-.overlay{
-    position: fixed;
-    width: 100vw;
-    top: 0;
-    height: 100vh;
-    background: rgb(0 0 0 / 70%);
-    z-index: 15;
-    visibility: hidden;
-    transition: visibility 0.2s ease-in-out;
-
-}
-
-.overlay.active{
-    visibility: visible;
 }
 
 header{
