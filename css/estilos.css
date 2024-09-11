@@ -21,22 +21,20 @@
     scroll-margin-top: 6rem;
 }
 
-/* .overlay{
+.overlay{
     position: fixed;
     width: 100vw;
     top: 0;
     height: 100vh;
     background: rgb(0 0 0 / 70%);
     z-index: 15;
-    display: none;
-    transition: all 8s linear;
+    visibility: hidden;
+    transition: visibility 0.2s ease-in-out;
 
-} */
+}
 
 .overlay.active{
-    display: inherit;
-    transition: all 8s linear;
-    
+    visibility: visible;
 }
 
 header{
@@ -73,12 +71,11 @@ nav li{
 }
 
 body {
-    background-color: #000000;
-    /* background-image: url('/imagenes/background.png');
+    background-image: url('/imagenes/background.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment:fixed */
+    background-attachment:fixed
 }
 
 main {

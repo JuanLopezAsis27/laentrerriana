@@ -2,8 +2,8 @@ let overlay = document.querySelector(".overlay");
 let closeMenu = document.querySelector(".closeMenu");
 let menu = document.querySelector(".iconoMenu");
 let sidebar = document.querySelector(".sidebar");
-let link = document.querySelectorAll(".link");
-console.log(link);
+let link = document.querySelector(".link");
+
 
 menu.onclick = function () {
   sidebar.classList.add("active");
@@ -14,6 +14,12 @@ closeMenu.onclick = function () {
   sidebar.classList.remove("active");
   overlay.classList.remove("active");
 };
+
+// link.addEventListener("onclick",(link)=>{
+//   sidebar.classList.remove("active");
+//   overlay.classList.remove("active");
+// })
+
 
 let currentIndex = 0;
 const slideInterval = 5000; 
@@ -117,10 +123,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function checkPosition() {
     pilares.forEach((pilar) => {
-      const pilarPosition = pilar.getBoundingClientRect().top;
+      const pilarPosition = pilar.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      if (pilarPosition < windowHeight) {
+      const pilarMidPoint = pilarPosition.top + (pilarPosition.height / 2);
+
+      if (pilarMidPoint < windowHeight) {
         pilar.classList.add("show");
       }
     });
@@ -135,10 +143,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const slogan = document.querySelector(".slogan h1");
 
   function checkPosition() {
-    const sloganPosition = slogan.getBoundingClientRect().top;
+    const sloganPosition = slogan.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
-    if (sloganPosition < windowHeight) {
+    const sloganMidPoint = sloganPosition.top + (sloganPosition.height / 2)
+
+
+    if (sloganMidPoint < windowHeight) {
       slogan.classList.add("show");
     }
   }
@@ -150,14 +161,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const ubicaciones = document.querySelectorAll(".ubicaciones div");
-  console.log(ubicaciones);
 
   function checkPosition() {
     ubicaciones.forEach((ubicacion) => {
-      const ubicacionPosition = ubicacion.getBoundingClientRect().top;
+      const ubicacionPosition = ubicacion.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      if (ubicacionPosition < windowHeight) {
+      const ubicacionMidPoint = ubicacionPosition.top + (ubicacionPosition.height / 2)
+
+
+      if (ubicacionMidPoint < windowHeight) {
         ubicacion.classList.add("show");
       }
     });
@@ -172,10 +185,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const sucursales = document.querySelector(".sucursalesTitulo h1");
 
   function checkPosition() {
-    const sucursalesPosition = sucursales.getBoundingClientRect().top;
+    const sucursalesPosition = sucursales.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
-    if (sucursalesPosition < windowHeight) {
+    const sucursalesnMidPoint = sucursalesPosition.top + (sucursalesPosition.height / 2)
+
+
+    if (sucursalesnMidPoint < windowHeight) {
       sucursales.classList.add("show");
     }
   }
@@ -189,10 +205,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const distribucion = document.querySelector(".distribucion");
 
   function checkPosition() {
-    const distribucionPosition = distribucion.getBoundingClientRect().top;
+    const distribucionPosition = distribucion.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
-    if (distribucionPosition < windowHeight) {
+    const distribucionMidPoint = distribucionPosition.top + (distribucionPosition.height / 2)
+
+
+    if (distribucionMidPoint < windowHeight) {
       distribucion.classList.add("show");
     }
   }
@@ -205,10 +224,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const mapa = document.querySelector(".mapa iframe");
 
   function checkPosition() {
-    const mapaPosition = mapa.getBoundingClientRect().top;
+    const mapaPosition = mapa.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
-    if (mapaPosition < windowHeight) {
+    const mapaMidPoint = mapaPosition.top + (mapaPosition.height / 2)
+
+    if (mapaMidPoint < windowHeight) {
       mapa.classList.add("show");
     }
   }
@@ -222,10 +243,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const ubicacionh1 = document.querySelector(".ubicacion h1");
 
   function checkPosition() {
-    const ubicacionh1Position = ubicacionh1.getBoundingClientRect().top;
+    const ubicacionh1Position = ubicacionh1.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
-    if (ubicacionh1Position < windowHeight) {
+    const ubicacionh1MidPoint = ubicacionh1Position.top + (ubicacionh1Position.height / 2)
+
+
+    if (ubicacionh1MidPoint < windowHeight) {
       ubicacionh1.classList.add("show");
     }
   }
@@ -239,10 +263,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const horario = document.querySelector(".horario");
 
   function checkPosition() {
-    const horarioPosition = horario.getBoundingClientRect().top;
+    const horarioPosition = horario.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
-    if (horarioPosition < windowHeight) {
+    const horarioMidPoint = horarioPosition.top + (horarioPosition.height / 2)
+
+    if (horarioMidPoint < windowHeight) {
       horario.classList.add("show");
     }
   }
@@ -270,8 +296,6 @@ function cambiarImagenSegunResolucion() {
   }
 }
 
-// Llama la función cuando se cargue la página
 cambiarImagenSegunResolucion();
 
-// Llama la función si la ventana cambia de tamaño
 window.addEventListener('resize', cambiarImagenSegunResolucion);
