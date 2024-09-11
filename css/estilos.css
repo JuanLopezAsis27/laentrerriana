@@ -74,8 +74,9 @@ nav li{
 
 body {
     background-image: url('/imagenes/background.png');
-    background-size: 100%;
-    background-position-y: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     background-attachment: fixed;
 }
 
@@ -165,11 +166,9 @@ li{
     display: grid;
     grid-template-columns: 2.3fr 1fr;
     padding: 0; 
-    margin-top: 6rem;
-    
-    margin-bottom: 10rem;
+    margin-top: 6rem;  
+    margin-bottom: 9rem;
 }
-
 
 .quienesSomosTexto{
     display: flex;
@@ -264,7 +263,7 @@ li{
 }
 
 .distribucion{
-    height: 37rem;
+    height: 34rem;
     padding: 0rem 10rem;
     opacity: 0;
     transform: scale(0.5); 
@@ -285,23 +284,23 @@ li{
 .distribucion h1{
     text-align: end;
     position: relative;
-    bottom: 22.5rem;
-    right: 7.5rem;
+    bottom: 21rem;
+    right: 6rem;
     font-size: 6.5rem;
 }
 
 .pieImagen{
-    height: 8rem;
+    height: 7rem;
     position: relative;
-    bottom: 10rem;
+    bottom: 9rem;
     width: 100%;
 }
 
 .pieImagen2{
-    height: 8rem;
+    height: 7rem;
     rotate: 180deg;
     position: relative;
-    bottom: 12rem;
+    bottom: 11rem;
     width: 100%;
 }
 
@@ -320,7 +319,7 @@ li{
     opacity: 0;
     transition: transform 0.8s ease-out, opacity 0.8s ease-out;
     transition-delay: 0.1s;
-    
+    min-width: 43%!important;
 }
 
 .mapa iframe.show{
@@ -340,7 +339,6 @@ li{
     justify-content: space-around;
 }
 
-
 .mapa h1{
   font-size: 3.5rem;
 }
@@ -348,7 +346,7 @@ li{
 .ubicacion h1{
     margin: 0;
     align-items: center;
-    font-size: 4.3rem;
+    font-size: 5rem;
     opacity: 0; 
     transform: translateX(100px);
     transition: opacity 1s ease-out, transform 1s ease-out; 
@@ -391,23 +389,23 @@ li{
     align-content: center;
     margin: 0;
     height: 30%;
+    font-size: 4rem;
 }
 
 .horario p{
-    font-size: 1.258rem;
+    font-size: 1.3rem;
 }
 
 .horario img{
-    width: 6rem;
-    height: 6rem;
-    
+    width: 8rem;
+    height: 8rem;  
 }
 
 .ubicaciones{
     display: flex;
     justify-content: space-between;
     padding: 1rem 10rem;
-    margin: 0.5rem 0 15rem 0;
+    margin: 0.5rem 0 10rem 0;
     flex-wrap: wrap;
 }
 
@@ -432,7 +430,7 @@ li{
 .sucursalesTitulo{
     padding: 4rem 10rem;
     text-align: center;
-    margin-top: 9rem; 
+    margin-top: 4rem; 
 }
 
 .sucursales img{
@@ -658,6 +656,10 @@ footer h1{
         margin-bottom: 6rem ;
     }
 
+    .ubicacion h1{
+        font-size: 4.8rem;
+        opacity: 0; 
+    }
 }
 
 @media (max-width: 1024px){
@@ -671,14 +673,13 @@ footer h1{
     }
 
     .slogan{
-        padding: 4rem 7rem;
+        padding: 4rem 5rem;
         margin: 0;
     }
 
     .slogan h1{
-        font-size: 4.5rem;
+        font-size: 5.4rem;
     }
-
 
     .slider{
         position: relative;
@@ -714,12 +715,12 @@ footer h1{
     }
 
     .quienesSomosTexto{
-        padding: 1rem 9rem;
+        padding: 1rem 8rem;
     }
 
     .distribucion{
         height: 28rem;
-        padding: 0rem 7rem;
+        padding: 0rem 5.5rem;
         opacity: 0;
         transform: scale(0.5); 
         transition: opacity 1s ease-out, transform 1s ease-out; 
@@ -743,36 +744,55 @@ footer h1{
         height: 6rem;
         bottom: 9rem;
     }
-
-    .ubicacion h1{
-        font-size: 4rem;
-    }
-
+    
     .mapa{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 1rem 7rem;
+        padding: 1rem 5.5rem;
+        margin-bottom: 6rem;
     }
 
     .mapa iframe{
         width: 100%;
     }
 
+    .mapa article{
+        min-width: 100%;
+    }
+
+    .ubicacion h1{
+        font-size: 5.3rem;
+    }
+
+    .horario h1{
+        font-size: 5rem;
+    }
+    
+    .horario p{
+        font-size: 1.4rem;
+    }
+
+    .horario img{
+        width: 8rem;
+        height: 8rem;
+        
+    }
+
     .sucursalesTitulo{
-        padding: 4rem 7rem;
+        margin-top: 0rem;
+        padding: 2rem 5.5rem;
     }
 
     .sucursales h1{
-        font-size: 6.5rem;
+        font-size: 9rem;
     }
-    
 
     .ubicaciones{
         display: flex;
         justify-content: center;
-        padding: 1rem 10rem;
-        margin: 0.5rem 0 15rem 0;
+        padding: 1rem 7rem;
+        margin: 0.5rem 0 8rem 0;
         flex-wrap: wrap;
     }
 
@@ -817,49 +837,239 @@ footer h1{
     }
 
     .quienesSomosTexto{
-        padding: 1rem 4.5rem;
+        padding: 1rem 6.5rem;
     }
 
     .slogan{
         padding: 1rem 4.5rem;
     }
 
+    .slogan h1{
+        font-size: 4.2rem;
+    }
+
+    .pilares{
+        margin-bottom: 6rem;
+    }
+
+    .pilares div{
+        width: 100%;   
+    }
+
+    .pilares img{
+        width:6.8rem ;
+        margin-bottom: 1.5rem;
+    }
+    
     .distribucion{
         padding: 0rem 4.5rem;
+        height: 23rem;
+    }
+
+    .distribucion h1{
+        text-align: end;
+        position: relative;
+        bottom: 14.8rem;
+        right: 2rem;
+        font-size: 4.5rem;
+    }
+
+    .pieImagen{
+        height: 5rem;   
+        bottom: 6rem;
+    }
+    
+    .pieImagen2{
+        height: 5rem;
+        bottom: 8rem;
     }
 
     .mapa{
         padding: 1rem 4.5rem;
+        gap: 3rem;
+        margin-top: 9rem;
+        margin-bottom: 5rem;
     }
 
-    .slogan h1{
-        font-size: 3.8rem;
+    .mapa article{
+        min-height: 25rem;
+    }
+
+    .mapa iframe{
+        height: 480px!important;
     }
     
-    .pilares div{
-        width: 100%;
-        
+    .ubicacion h1{
+        font-size: 3.92rem;
     }
 
+    .horario h1{
+        font-size: 4rem;
+    }
+    
+    .horario p{
+        font-size: 1.3rem;
+    }
+
+    .horario img{
+        width: 7rem;
+        height: 7rem;
+    }
+    
     .sucursalesTitulo{
-        padding: 4rem 4.5rem;
+        padding: 1rem 4.5rem;
     }
 
     .sucursales h1{
-        font-size: 7rem;
-       
+        font-size: 7rem; 
+    }
+
+    .sucursales img{
+        width:6.5rem ;
+    }
+
+    .ubicaciones{
+        margin-bottom: 6rem;
     }
 
     .redes{
         display: none;
     }
-
-    
+ 
+    .wp{
+        bottom: 1rem;
+        right: 0.7rem;
+        width: 2.7rem;
+        align-items: center;
+    }
 
 }
 
 
-@media (max-width: 473px){
-   
+@media (max-width: 640px){
+
+    .slogan{
+        padding: 1rem 4.2rem;
+    }
+
+    .slogan h1{
+        font-size: 3.4rem;
+    }
+
+    .pilares img{
+        width:6.5rem ;
+        margin-bottom: 1.5rem;
+    }
+    
+    .distribucion{
+        padding: 1rem 4.2rem;
+        height: 20rem;
+    }
+    
+    .mapa article{
+        min-height: 20rem;
+    }
+
+    .mapa iframe{
+        height: 420px!important;
+    }
+
+    .ubicacion h1{
+        font-size: 3.1rem;
+    } 
+
+    .horario h1{
+        font-size: 3.3rem;
+    }
+    
+    .horario p{
+        font-size: 1rem;
+    }
+
+    .horario img{
+        width: 6rem;
+        height: 6rem;
+    }
+
+
+}
+
+
+@media (max-width: 441px){
+
+    .quienesSomosTexto{
+        padding: 1rem 2.5rem;
+    }
+
+    .slogan{
+        padding: 1rem 1rem;
+    }
+
+    .slogan h1{
+        font-size: 2.6rem;
+    }
+
+    .pilares{
+        padding: 0 5rem;
+    }
+
+    .pilares p{
+        font-size: 1.3rem;
+    }
+
+    .pilares img{
+        width: 5rem;
+    }
+
+    .distribucion{
+        padding: 0 2rem;
+        height: 15.5rem;
+        
+    }
+
+    .distribucion h1{
+        bottom: 12rem;
+        font-size: 3rem;
+        right: 1.5rem;
+    }
+
+    .pieImagen{
+        height: 4rem;   
+        bottom: 5rem;
+    }
+    
+    .pieImagen2{
+        height: 4rem;
+        bottom: 7rem;
+    }
+
+    .mapa{
+        padding: 1rem 2rem;
+    }
+
+    .mapa iframe{
+        height: 340px!important;
+    }
+
+    .ubicacion h1{
+        font-size: 3rem;
+    } 
+
+    .horario h1{
+        font-size: 3.1rem;
+    }
+
+    .sucursalesTitulo{
+        padding: 1rem 2rem;
+    }
+
+    .sucursales h1{
+        font-size: 4.3rem; 
+    }
+
+    .sucursales img{
+        width:5rem ;
+    }
+
 
 }
