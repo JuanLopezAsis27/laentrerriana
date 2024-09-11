@@ -16,7 +16,8 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     scroll-behavior: smooth;
     scroll-margin-top: 6rem;
 }
@@ -25,9 +26,15 @@ header{
     background-color: #000000;
     padding: 0.5rem 7.5rem;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: fixed;
     min-height: 13%;
     top: 0;
@@ -63,12 +70,15 @@ body {
 }
 
 main {
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 h1, h2 {
     font-family: humane;
     color: #F5C70E
+    
 }
 
 h1 {
@@ -94,20 +104,28 @@ li{
 .slider {
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     height: 38rem;
 }
 
 .slides {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+    transition: -webkit-transform 0.5s ease-in-out;
+    -o-transition: transform 0.5s ease-in-out;
     transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
     height: 100%;
 
 }
 
 .slide {
     min-width: 100%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     height: 100%;
 
 }
@@ -116,7 +134,8 @@ li{
     width: 100%;
     display: block;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 .prev, .next {
@@ -128,7 +147,9 @@ li{
     color: #fff;
     border: none;
     border-radius: 50%;
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
     cursor: pointer;
 }
 
@@ -153,9 +174,16 @@ li{
 }
 
 .quienesSomosTexto{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     gap: 1rem;
     height: 100%;
     padding: 0rem 6rem 0rem 2rem;
@@ -168,10 +196,15 @@ li{
 }
 
 .productos{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .productos div{
@@ -194,22 +227,37 @@ li{
     font-family: manteman;
     font-size: 7rem;
     opacity: 0; 
-    transform: translateY(-50px); 
+    -webkit-transform: translateY(-50px); 
+        -ms-transform: translateY(-50px); 
+            transform: translateY(-50px); 
+    -webkit-transition: opacity 0.5s ease-out, -webkit-transform 1s ease-out; 
+    transition: opacity 0.5s ease-out, -webkit-transform 1s ease-out; 
+    -o-transition: opacity 0.5s ease-out, transform 1s ease-out; 
     transition: opacity 0.5s ease-out, transform 1s ease-out; 
-    transition-delay: 0.1s;
+    transition: opacity 0.5s ease-out, transform 1s ease-out, -webkit-transform 1s ease-out; 
+    -webkit-transition-delay: 0.1s; 
+         -o-transition-delay: 0.1s; 
+            transition-delay: 0.1s;
 }
 
 .slogan h1.show{
     opacity: 1; 
-    transform: translateY(0); 
+    -webkit-transform: translateY(0); 
+        -ms-transform: translateY(0); 
+            transform: translateY(0); 
 }
 
 .pilares{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 0rem 10rem;
     margin: 1.5rem 0 10rem 0;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 .pilares img{
@@ -218,11 +266,18 @@ li{
 }
 
 .pilares img:hover{
-    filter: drop-shadow(
+    -webkit-filter: drop-shadow(
+        3px 3px 3px #F5C70E
+    );
+            filter: drop-shadow(
         3px 3px 3px #F5C70E
     );
 
-    transform: scale(1.1,1.1);
+    -webkit-transform: scale(1.1,1.1);
+
+        -ms-transform: scale(1.1,1.1);
+
+            transform: scale(1.1,1.1);
 }
 
 .pilares div{
@@ -232,8 +287,12 @@ li{
     padding: 1rem;
     border-radius: 20px;
     opacity: 0;
+    -webkit-transition: opacity 1.2s ease-out;
+    -o-transition: opacity 1.2s ease-out;
     transition: opacity 1.2s ease-out;
-    transition-delay: 0.1s;
+    -webkit-transition-delay: 0.1s;
+         -o-transition-delay: 0.1s;
+            transition-delay: 0.1s;
 }
 
 .pilares div.show{
@@ -248,14 +307,24 @@ li{
     height: 34rem;
     padding: 0rem 10rem;
     opacity: 0;
-    transform: scale(0.5); 
+    -webkit-transform: scale(0.5);
+        -ms-transform: scale(0.5);
+            transform: scale(0.5); 
+    -webkit-transition: opacity 1s ease-out, -webkit-transform 1s ease-out; 
+    transition: opacity 1s ease-out, -webkit-transform 1s ease-out; 
+    -o-transition: opacity 1s ease-out, transform 1s ease-out; 
     transition: opacity 1s ease-out, transform 1s ease-out; 
-    transition-delay: 0.1s;
+    transition: opacity 1s ease-out, transform 1s ease-out, -webkit-transform 1s ease-out; 
+    -webkit-transition-delay: 0.1s; 
+         -o-transition-delay: 0.1s; 
+            transition-delay: 0.1s;
 }
 
 .distribucion.show{
     opacity: 1; /* Elemento visible al agregar la clase 'show' */
-    transform: scale(1); /* Escalado a tamaño original al agregar la clase 'show' */
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1); /* Escalado a tamaño original al agregar la clase 'show' */
 }
 
 .distribucion .imagenDistribucion {
@@ -289,23 +358,37 @@ li{
 .mapa{
     padding: 1rem 10rem;
     margin-top: 15rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 4rem;
-    align-items: end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: end;
     margin-bottom: 6rem ;
     
 }
 
 .mapa iframe{
-    transform: translate(-50%, -50%) scale(0);
+    -webkit-transform: translate(-50%, -50%) scale(0);
+        -ms-transform: translate(-50%, -50%) scale(0);
+            transform: translate(-50%, -50%) scale(0);
     opacity: 0;
+    -webkit-transition: opacity 0.8s ease-out, -webkit-transform 0.8s ease-out;
+    transition: opacity 0.8s ease-out, -webkit-transform 0.8s ease-out;
+    -o-transition: transform 0.8s ease-out, opacity 0.8s ease-out;
     transition: transform 0.8s ease-out, opacity 0.8s ease-out;
-    transition-delay: 0.1s;
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out, -webkit-transform 0.8s ease-out;
+    -webkit-transition-delay: 0.1s;
+         -o-transition-delay: 0.1s;
+            transition-delay: 0.1s;
     min-width: 43%!important;
 }
 
 .mapa iframe.show{
-    transform: translate(0%, 0%) scale(1);
+    -webkit-transform: translate(0%, 0%) scale(1);
+        -ms-transform: translate(0%, 0%) scale(1);
+            transform: translate(0%, 0%) scale(1);
     opacity: 1;
 }
 
@@ -315,10 +398,16 @@ li{
 }
 
 .mapa article{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     min-height: 34rem;
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     overflow: hidden;
 }
 
@@ -328,50 +417,81 @@ li{
 
 .ubicacion h1{
     margin: 0;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: 5rem;
     opacity: 0; 
-    transform: translateX(100px);
-    transition: opacity 1s ease-out, transform 1s ease-out; 
+    -webkit-transform: translateX(100px); 
+        -ms-transform: translateX(100px); 
+            transform: translateX(100px);
+    -webkit-transition: opacity 1s ease-out, -webkit-transform 1s ease-out;
+    transition: opacity 1s ease-out, -webkit-transform 1s ease-out;
+    -o-transition: opacity 1s ease-out, transform 1s ease-out;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    transition: opacity 1s ease-out, transform 1s ease-out, -webkit-transform 1s ease-out; 
 }
 
 .ubicacion h1.show{
     opacity: 1;
-    transform: translateX(0); 
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0); 
 }
 
 .ubicacion{
     height: 50%;
-    align-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
     
 }
 
 .horario{
     height: 50%;
     overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 2rem;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     opacity: 0; 
-    transform: translateX(100px);
-    transition: opacity 1s ease-out, transform 1s ease-out; 
+    -webkit-transform: translateX(100px); 
+        -ms-transform: translateX(100px); 
+            transform: translateX(100px);
+    -webkit-transition: opacity 1s ease-out, -webkit-transform 1s ease-out;
+    transition: opacity 1s ease-out, -webkit-transform 1s ease-out;
+    -o-transition: opacity 1s ease-out, transform 1s ease-out;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    transition: opacity 1s ease-out, transform 1s ease-out, -webkit-transform 1s ease-out; 
 }
 
 .horario.show{
     opacity: 1;
-    transform: translateX(0); 
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0); 
 }
 
 .horario div{
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .horario h1{
     height: 13rem;
-    align-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
     margin: 0;
     height: 30%;
     font-size: 4rem;
@@ -387,17 +507,26 @@ li{
 }
 
 .ubicaciones{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 1rem 10rem;
     margin: 0.5rem 0 10rem 0;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 .ubicaciones div{
     opacity: 0;
+    -webkit-transition: opacity 1.2s ease-out;
+    -o-transition: opacity 1.2s ease-out;
     transition: opacity 1.2s ease-out;
-    transition-delay: 0.1s;
+    -webkit-transition-delay: 0.1s;
+         -o-transition-delay: 0.1s;
+            transition-delay: 0.1s;
 }
 
 .ubicaciones div.show{
@@ -405,11 +534,18 @@ li{
 }
 
 .ubicaciones img:hover{
-    filter: drop-shadow(
+    -webkit-filter: drop-shadow(
+        3px 3px 3px #F5C70E
+    );
+            filter: drop-shadow(
         3px 3px 3px #F5C70E
     );
 
-    transform: scale(1.1,1.1);
+    -webkit-transform: scale(1.1,1.1);
+
+        -ms-transform: scale(1.1,1.1);
+
+            transform: scale(1.1,1.1);
 }
 
 .sucursalesTitulo{
@@ -440,14 +576,24 @@ li{
     margin-bottom: 0;
     font-family: manteman;
     opacity: 0; 
-    transform: translateY(-50px); 
+    -webkit-transform: translateY(-50px); 
+        -ms-transform: translateY(-50px); 
+            transform: translateY(-50px); 
+    -webkit-transition: opacity 0.5s ease-out, -webkit-transform 1s ease-out; 
+    transition: opacity 0.5s ease-out, -webkit-transform 1s ease-out; 
+    -o-transition: opacity 0.5s ease-out, transform 1s ease-out; 
     transition: opacity 0.5s ease-out, transform 1s ease-out; 
-    transition-delay: 0.1s;
+    transition: opacity 0.5s ease-out, transform 1s ease-out, -webkit-transform 1s ease-out; 
+    -webkit-transition-delay: 0.1s; 
+         -o-transition-delay: 0.1s; 
+            transition-delay: 0.1s;
 }
 
 .sucursales h1.show{
     opacity: 1; 
-    transform: translateY(0); 
+    -webkit-transform: translateY(0); 
+        -ms-transform: translateY(0); 
+            transform: translateY(0); 
 }
 
 footer{
@@ -460,9 +606,15 @@ footer{
 
 .footerRedes{
     min-height: 6rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align: center;
     margin-bottom: 1.5rem;
 }
@@ -473,7 +625,9 @@ footer{
 
 .footerRedes a:hover{
     width: 4rem;
-    transform: scale(1.05,1.05);
+    -webkit-transform: scale(1.05,1.05);
+        -ms-transform: scale(1.05,1.05);
+            transform: scale(1.05,1.05);
 }
 
 footer h1{
@@ -502,14 +656,23 @@ footer h1{
     bottom: 1rem;
     right: 1rem;
     height: 15rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     background-color: #404040;
     padding: 0.1rem 0rem 0rem 0rem; 
     border-radius: 2rem;
     width: 3.5rem;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .btn-wsp{
@@ -524,8 +687,12 @@ footer h1{
 .contactenos{
     rotate: 90deg;
     height: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: 1.2rem;
 }
 
@@ -549,9 +716,17 @@ footer h1{
     width: 0;
     z-index: 999;
     background-color: #fff;
-    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
@@ -568,21 +743,30 @@ footer h1{
 .sidebarHeader{
     background-color: #404040;
     padding: 1.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-bottom: 1rem;
 }
 
 .sidebarHeader h1{
     margin: 0;
-    align-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
     font-size: 3.7rem;
     
 }
 
 .closeMenu{
     cursor: pointer;
+    -webkit-transition: 0.08s ease-in;
+    -o-transition: 0.08s ease-in;
     transition: 0.08s ease-in;
     border-radius: 100%;
     width: 2.4rem;
@@ -603,8 +787,12 @@ footer h1{
 
 .redesFeeds{
     padding: 0 7.5rem 6rem 7.5rem ;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     gap: 8rem;
 }
 
@@ -641,9 +829,13 @@ footer h1{
     .mapa{
         padding: 1rem 5rem;
         margin-top: 15rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         gap: 4rem;
-        align-items: end;
+        -webkit-box-align: end;
+            -ms-flex-align: end;
+                align-items: end;
         margin-bottom: 6rem ;
     }
 
@@ -675,14 +867,20 @@ footer h1{
     .slider{
         position: relative;
         overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         height: 89vh;
         margin-bottom: 8rem;
     }
 
     .quienesSomos{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 
     .quienesSomosTexto{
@@ -693,9 +891,17 @@ footer h1{
         height: 28rem;
         padding: 0rem 5.5rem;
         opacity: 0;
-        transform: scale(0.5); 
+        -webkit-transform: scale(0.5);
+            -ms-transform: scale(0.5);
+                transform: scale(0.5); 
+        -webkit-transition: opacity 1s ease-out, -webkit-transform 1s ease-out; 
+        transition: opacity 1s ease-out, -webkit-transform 1s ease-out; 
+        -o-transition: opacity 1s ease-out, transform 1s ease-out; 
         transition: opacity 1s ease-out, transform 1s ease-out; 
-        transition-delay: 0.1s;
+        transition: opacity 1s ease-out, transform 1s ease-out, -webkit-transform 1s ease-out; 
+        -webkit-transition-delay: 0.1s; 
+             -o-transition-delay: 0.1s; 
+                transition-delay: 0.1s;
     }
 
     .distribucion h1{
@@ -717,9 +923,16 @@ footer h1{
     }
     
     .mapa{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         padding: 1rem 5.5rem;
         margin-bottom: 6rem;
     }
@@ -760,11 +973,16 @@ footer h1{
     }
 
     .ubicaciones{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         padding: 1rem 7rem;
         margin: 0.5rem 0 8rem 0;
-        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     }
 
     .redesFeeds{
@@ -911,7 +1129,9 @@ footer h1{
         bottom: 1rem;
         right: 0.7rem;
         width: 2.7rem;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
 
 }
