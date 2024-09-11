@@ -74,10 +74,10 @@ nav li{
 
 body {
     background-image: url('/imagenes/background.png');
-    background-size: cover;
+    background-size: 100vw 100vh;
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment:fixed
 }
 
 main {
@@ -1065,4 +1065,15 @@ footer h1{
     }
 
 
+}
+
+@media (max-width:376px){
+
+    .slogan h1{
+        font-size: 2.364rem;
+    }
+
+    .horario p {
+        font-size: 0.8rem;
+    }
 }
