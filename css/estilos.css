@@ -4,8 +4,12 @@
 }
 
 @font-face {
-    font-family: humane;
-    src: url(/fuentes/HumaneOpenType-PS/Humane-Bold.otf),url(/fuentes/HumaneOpenType-PS/Humane-Bold.ttf);
+    font-family: 'MangoGrotesque';
+    src: url('/fuentes/HumaneOpenType-PS/Humane-Bold.woff2') format('woff2'), /* Modern Browsers */
+         url('/fuentes/HumaneOpenType-PS/Humane-Bold.otf') format('opentype'); /* Safari, Android, iOS */
+             font-style: normal; 
+    font-weight: bold; 
+    text-rendering: optimizeLegibility; 
 }
 
 @font-face {
@@ -76,7 +80,7 @@ main {
 }
 
 h1, h2 {
-    font-family: humane;
+    font-family: 'MangoGrotesque';
     color: #F5C70E
     
 }
