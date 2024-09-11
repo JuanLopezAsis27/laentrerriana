@@ -65,18 +65,29 @@ nav li{
     cursor: pointer;
 }
 
-body {
+#background_wrap {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
     background-image: url('/imagenes/background.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment:fixed
+    background-attachment: scroll;
 }
+
+/* body {
+    /* background: url('/imagenes/background.png') no-repeat center center fixed;
+    background-size: cover; 
+} */
 
 main {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+
+            
 }
 
 h1, h2 {
@@ -325,10 +336,10 @@ li{
 }
 
 .distribucion.show{
-    opacity: 1; /* Elemento visible al agregar la clase 'show' */
+    opacity: 1;
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
-            transform: scale(1); /* Escalado a tamaño original al agregar la clase 'show' */
+            transform: scale(1); 
 }
 
 .distribucion .imagenDistribucion {
@@ -1194,10 +1205,6 @@ footer h1{
 
     .quienesSomosTexto{
         padding: 1rem 2.5rem;
-    }
-
-    .slide img{
-
     }
 
     .slogan{
