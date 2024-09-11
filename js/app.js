@@ -298,3 +298,14 @@ function cambiarImagenSegunResolucion() {
 cambiarImagenSegunResolucion();
 
 window.addEventListener('resize', cambiarImagenSegunResolucion);
+
+window.onload = function() {
+  var loader = document.getElementById('loader');
+  var content = document.getElementById('content');
+
+  // Oculta el loader
+  loader.style.display = 'none';
+
+  // Muestra el contenido
+  content.style.display = 'block';
+};
