@@ -20,6 +20,26 @@ links.forEach((link)=>{
 )
 })
 
+links.forEach((link)=>{
+  link.addEventListener("click",function(){
+    event.preventDefault();
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+                    
+    if (targetElement) {
+      const offset = 100;
+      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
+                        
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+                        
+      history.pushState(null, null, window.location.pathname + window.location.search);
+    }  
+  })
+})
+
 let currentIndex = 0;
 const slideInterval = 5000; 
 let intervalId; 
@@ -303,9 +323,8 @@ window.onload = function() {
   var loader = document.getElementById('loader');
   var content = document.getElementById('content');
 
-  // Oculta el loader
   loader.style.display = 'none';
 
-  // Muestra el contenido
   content.style.display = 'block';
 };
+
