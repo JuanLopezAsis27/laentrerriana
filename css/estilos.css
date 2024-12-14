@@ -75,23 +75,15 @@ nav li{
     background-attachment: scroll;
 }
 
-/* body {
-    /* background: url('/imagenes/background.png') no-repeat center center fixed;
-    background-size: cover; 
-} */
-
 main {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-
-            
 }
 
 h1, h2 {
     font-family: 'MangoGrotesque';
     color: #F5C70E
-    
 }
 
 h1 {
@@ -104,12 +96,7 @@ h2 {
     margin-bottom: 10px;
 }
 
-p{
-    color: #fff;
-    font-family: aristotelica;
-}
-
-li{
+p, li{
     color: #fff;
     font-family: aristotelica;
 }
@@ -119,7 +106,7 @@ li{
     overflow: hidden;
     -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    height: 38rem;
+    height: 41rem;
 }
 
 .slides {
@@ -201,7 +188,6 @@ li{
     height: 100%;
     padding: 0rem 6rem 0rem 2rem;
     text-align: start;
-    /* background-color: #404040; */
 }
 
 .quienesSomosTexto p{
@@ -222,7 +208,6 @@ li{
 
 .productos div{
     width: 20%;
-    
 }
 
 .productosImg{
@@ -232,8 +217,7 @@ li{
 .slogan{
     padding: 4rem 10rem;
     text-align: center;
-    margin-top: 2rem;
-    
+    margin-top: 2rem; 
 }
 
 .slogan h1{
@@ -278,7 +262,7 @@ li{
     margin-bottom: 1.5rem;
 }
 
-.pilares img:hover{
+.pilares img:hover , .ubicaciones img:hover{
     -webkit-filter: drop-shadow(
         3px 3px 3px #F5C70E
     );
@@ -287,16 +271,13 @@ li{
     );
 
     -webkit-transform: scale(1.1,1.1);
-
         -ms-transform: scale(1.1,1.1);
-
             transform: scale(1.1,1.1);
 }
 
 .pilares div{
     width: 16rem;
     text-align: center;
-    /* background-color: #000000b3; */
     padding: 1rem;
     border-radius: 20px;
     opacity: 0;
@@ -379,7 +360,6 @@ li{
         -ms-flex-align: end;
             align-items: end;
     margin-bottom: 6rem ;
-    
 }
 
 .mapa iframe{
@@ -456,7 +436,6 @@ li{
     height: 50%;
     -ms-flex-line-pack: center;
         align-content: center;
-    
 }
 
 .horario{
@@ -544,21 +523,6 @@ li{
 
 .ubicaciones div.show{
     opacity: 1;
-}
-
-.ubicaciones img:hover{
-    -webkit-filter: drop-shadow(
-        3px 3px 3px #F5C70E
-    );
-            filter: drop-shadow(
-        3px 3px 3px #F5C70E
-    );
-
-    -webkit-transform: scale(1.1,1.1);
-
-        -ms-transform: scale(1.1,1.1);
-
-            transform: scale(1.1,1.1);
 }
 
 .sucursalesTitulo{
@@ -718,7 +682,6 @@ footer h1{
     position: relative;
     bottom: 0.5rem;
     left: 0.1rem;
-    
 }
 
 .sidebar{
@@ -773,7 +736,6 @@ footer h1{
     -ms-flex-line-pack: center;
         align-content: center;
     font-size: 3.7rem;
-    
 }
 
 .closeMenu{
@@ -819,20 +781,18 @@ footer h1{
 }
 
 
-@media (max-width: 1440px){
+@media (max-width: 1441px){
 
     .slider{
-        height: 43rem;
+        height: 46rem;
     }
-    
 
     .slogan h1{
         font-size: 4.8rem;
     }
     
     .pilares div{
-        width: 50%;
-        
+        width: 50%;    
     }
 
     .distribucion{
@@ -840,16 +800,7 @@ footer h1{
     }
 
     .mapa{
-        padding: 1rem 5rem;
-        margin-top: 15rem;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        gap: 4rem;
-        -webkit-box-align: end;
-            -ms-flex-align: end;
-                align-items: end;
-        margin-bottom: 6rem ;
+        padding: 1rem 5rem;     
     }
 
     .ubicacion h1{
@@ -903,18 +854,6 @@ footer h1{
     .distribucion{
         height: 28rem;
         padding: 0rem 5.5rem;
-        opacity: 0;
-        -webkit-transform: scale(0.5);
-            -ms-transform: scale(0.5);
-                transform: scale(0.5); 
-        -webkit-transition: opacity 1s ease-out, -webkit-transform 1s ease-out; 
-        transition: opacity 1s ease-out, -webkit-transform 1s ease-out; 
-        -o-transition: opacity 1s ease-out, transform 1s ease-out; 
-        transition: opacity 1s ease-out, transform 1s ease-out; 
-        transition: opacity 1s ease-out, transform 1s ease-out, -webkit-transform 1s ease-out; 
-        -webkit-transition-delay: 0.1s; 
-             -o-transition-delay: 0.1s; 
-                transition-delay: 0.1s;
     }
 
     .distribucion h1{
@@ -973,7 +912,6 @@ footer h1{
     .horario img{
         width: 8rem;
         height: 8rem;
-        
     }
 
     .sucursalesTitulo{
@@ -1010,7 +948,6 @@ footer h1{
         display: block;
         width: 3rem;
         background-color: #40404000;
-       
     }
 
     .contactenos{
@@ -1142,9 +1079,6 @@ footer h1{
         bottom: 1rem;
         right: 0.7rem;
         width: 2.7rem;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
     }
 
 }
@@ -1195,7 +1129,6 @@ footer h1{
         height: 6rem;
     }
 
-
 }
 
 
@@ -1227,8 +1160,7 @@ footer h1{
 
     .distribucion{
         padding: 0 2rem;
-        height: 15.5rem;
-        
+        height: 15.5rem;  
     }
 
     .distribucion h1{
@@ -1274,7 +1206,6 @@ footer h1{
     .sucursales img{
         width:5rem ;
     }
-
 
 }
 
