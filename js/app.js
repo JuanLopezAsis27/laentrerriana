@@ -318,3 +318,27 @@ function cambiarImagenSegunResolucion() {
 cambiarImagenSegunResolucion();
 
 window.addEventListener('resize', cambiarImagenSegunResolucion);
+
+function lazyLoadImages() {
+  const images = document.querySelectorAll('img[loading="lazy"]');
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src;
+              img.removeAttribute('loading');
+              imageObserver.unobserve(img);
+          }
+      });
+  });
+
+  images.forEach(img => {
+      img.dataset.src = img.src;
+      img.removeAttribute('src');
+      imageObserver.observe(img);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  lazyLoadImages();
+});
